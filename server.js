@@ -1,23 +1,19 @@
 const express = require("express");
 const app = express();
 const connectDb = require("./src/connection");
-const User = require("./src/User.model");
+const bodyParser = require("body-parser");
 
 const PORT = 8080;
 
-app.get("/users", async (req, res) => {
-  const users = await User.find();
+// parse various different custom JSON types as JSON
+app.use(bodyParser.json());
+// parse some custom thing into a Buffer
+app.use(bodyParser.raw({ type: "application/vnd.custom-type" }));
+// parse an HTML body into a string
+app.use(bodyParser.text({ type: "text/html" }));
 
-  res.json(users);
-});
-
-app.get("/user-create", async (req, res) => {
-  const user = new User({ username: "userTest" });
-
-  await user.save().then(() => console.log("User created"));
-
-  res.send("User created \n");
-});
+// Define routes
+app.use("/api/routes", require("./src/routes/index"));
 
 app.listen(PORT, function () {
   console.log(`Listening on ${PORT}`);
