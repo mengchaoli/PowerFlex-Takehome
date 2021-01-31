@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "miles_needed": 12,
+      "charge_duration": 12,
+      "make": "tesla",
+      "model": "s",
+      "year": 2020,
+      "mileage": 20000,
+      "battery_size": 200
+    },
+    {
+      "miles_needed": 200,
+      "charge_duration": 20,
+      "make": "nissan",
+      "model": "leaf",
+      "year": 2015,
+      "mileage": 87293,
+      "battery_size": 100
+    },
+    {
+      "miles_needed": 87,
+      "charge_duration": 4,
+      "make": "rivian",
+      "model": "r1t",
+      "year": 2021,
+      "mileage": 80,
+      "battery_size": 300
+    }
+  ]
+}
