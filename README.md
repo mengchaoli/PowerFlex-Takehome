@@ -1,4 +1,4 @@
-# PowerFlex-Takehome
+# Powerflex-Takehome
 
 ## Environment
 Please make sure you have **Docker** and **Postman** installed on your computer.
